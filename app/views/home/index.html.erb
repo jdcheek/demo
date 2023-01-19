@@ -1,2 +1,9 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>NASA Astrological Photo of the Day</h1>
+  <article>
+    <h2><%= @response["title"] %></h2>
+    <i><%= @response["date"] %></i>
+    <div>
+    <%= image_tag @response["url"] %>
+    </div>
+    <p><%= @response["explanation"] %></p>
+  </article>

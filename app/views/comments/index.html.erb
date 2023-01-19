@@ -4,11 +4,13 @@
 
 <div id="comments">
   <% @comments.each do |comment| %>
-    <%= render comment %>
-    <p>
-      <%= link_to "Show this comment", comment %>
-    </p>
-  <% end %>
+    <% #  if comment.date == @response["date"] %>
+      <%= render comment %>
+    <% if comment.user == current_user %>
+      <%= link_to "Edit", edit_comment_path(comment.id) %>
+    <% end %>
+  <%# end %>
+<% end %>
 </div>
 
 <%= link_to "New comment", new_comment_path %>
